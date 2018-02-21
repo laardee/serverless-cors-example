@@ -1,0 +1,14 @@
+service: cors-example
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  hello:
+    handler: item/index.handler
+    events:
+      - http:
+          path: item
+          method: get
+          cors: true
